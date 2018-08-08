@@ -3,12 +3,16 @@ console.log("Starting app");
 
 const fs = require("fs");
 const os = require("os");
+const _ = require("lodash");
 // How to import different files into our code... Why not use "import"?
 const notes = require("./notes.js");
 
 // var res = notes.addNote();
 // console.log(res);
 notes.add(1, 2);
+
+console.log(_.isString(1));
+console.log(_.uniq([1, 2, 3, 4, 1, 2, 3, 4, 5]));
 
 // var user = os.userInfo();
 // console.log(user.username);
