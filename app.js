@@ -1,22 +1,25 @@
 console.log("Starting app");
 // APIs --> https://nodejs.org/api/
 
+// Third party modules
 const fs = require("fs");
-const os = require("os");
 const _ = require("lodash");
-// How to import different files into our code... Why not use "import"?
+
+// I created
 const notes = require("./notes.js");
 
-// var res = notes.addNote();
-// console.log(res);
-notes.add(1, 2);
-
-console.log(_.isString(1));
-console.log(_.uniq([1, 2, 3, 4, 1, 2, 3, 4, 5]));
-
-// var user = os.userInfo();
-// console.log(user.username);
-// fs.appendFileSync(
-//   "greetings.txt",
-//   `I love my cat, and my name is ${user.username} and I am ${notes.age}`
-// );
+var command = process.argv[2]; //list
+console.log(command);
+// Access command line arguments
+// console.log(process.argv);
+if (command === "add") {
+  console.log("Adding new note");
+} else if (command === "list") {
+  console.log("Show list");
+} else if (command === "read") {
+  console.log("Reading note");
+} else if (command === "remove") {
+  console.log("Removing Note");
+} else {
+  console.log("Command not recognized");
+}
